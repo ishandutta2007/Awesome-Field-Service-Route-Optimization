@@ -37,7 +37,7 @@ Contributions welcome! Open an PR to add/update entries. Keep descriptions factu
 
 ## Open-Source GitHub Projects
 
-| Project | Star Badge | Description |
+| Project | Stars_Badge | Description |
 |---------|------------|-------------|
 | **[VROOM](https://github.com/VROOM-Project/vroom)** | [![Stars](https://img.shields.io/github/stars/VROOM-Project/vroom?style=social&color=white)](https://github.com/VROOM-Project/vroom/stargazers) | **The most capable open-source vehicle routing solver for industrial use.** BSD-2-Clause, C++. **Solves TSP, CVRP, VRPTW, PDPTW, MD-VRP, HVRP, VRPB, and mixed variants** in a single generic model [citation:6]. **Near-optimal solutions in ~146 ms** on 100-point benchmarks; scales to thousands of stops. **Handles driver breaks, work-zone preferences, vehicle-task suitability**—constraints rarely addressed in academic solvers [citation:6]. Maintained by Verso (FEMTO-ST spin-off) with a commercial SaaS offering for support and consulting. **Best for organizations wanting a battle-tested VRP solver** that can be embedded into custom dispatch systems [citation:6]. |
 | **[GraphHopper](https://github.com/graphhopper/graphhopper)** | [![Stars](https://img.shields.io/github/stars/graphhopper/graphhopper?style=social&color=white)](https://github.com/graphhopper/graphhopper/stargazers) | **The routing engine that feeds VRP solvers.** Apache-2.0, Java. **Fast road-network routing** with Contraction Hierarchies, Dijkstra, and A* algorithms [citation:2]. **Distance Matrix API** generates the pairwise travel times and distances that VROOM and similar solvers consume [citation:2]. **Customizable impedance functions** enable logistics-specific routing that considers time windows, vehicle constraints, or cost functions beyond distance . **Trade-off**: a routing engine, not a VRP solver—pair with VROOM for optimization. **Best for teams needing a business-friendly routing foundation** to build optimization on top . |
@@ -46,7 +46,7 @@ Contributions welcome! Open an PR to add/update entries. Keep descriptions factu
 
 ### Additional Strong Open-Source Options
 
-| Project | Star Badge | Description |
+| Project | Stars_Badge | Description |
 |---------|------------|-------------|
 | **[Fleetbase](https://github.com/fleetbase/fleetbase)** | [![Stars](https://img.shields.io/github/stars/fleetbase/fleetbase?style=social&color=white)](https://github.com/fleetbase/fleetbase/stargazers) | **Open-source modular logistics operating system.** MIT licensed, **1,816 stars**. Integrates **routing, driver management, order tracking, and analytics** into a unified platform with plugin architecture and API hooks . **Best for teams wanting an operational fleet platform** with built-in dispatch rather than a pure solver . |
 | **[Traccar](https://github.com/traccar/traccar)** | [![Stars](https://img.shields.io/github/stars/traccar/traccar?style=social&color=white)](https://github.com/traccar/traccar/stargazers) | **Open-source GPS tracking platform for fleet telematics.** Apache-2.0. Self-hosted or managed. **Best for real-time vehicle tracking** that complements route optimization—provides the location data that dispatch systems need [citation:4]. |
