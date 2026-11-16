@@ -1,5 +1,9 @@
 # Awesome-Field-Service-Route-Optimization
 
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Field Service Route Optimization Banner" width="100%">
+</p>
+
 ## Top Field Service Route Optimization Ecosystem
 
 **Curated List of SaaS Platforms & Open-Source GitHub Projects**  

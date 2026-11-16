@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <radialGradient id="meshGrad1" cx="20%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="meshGrad2" cx="80%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="meshGrad3" cx="60%" cy="10%" r="40%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="routeGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <linearGradient id="routeGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="heavyGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" stroke-opacity="0.4" />
+      <circle cx="40" cy="40" r="1" fill="#475569" fill-opacity="0.5" />
+    </pattern>
+
+    <style>
+      .glow-pulse {
+        animation: pulseGlow 4s ease-in-out infinite alternate;
+      }
+      .dash-flow-1 {
+        stroke-dasharray: 8 8;
+        animation: dashAnimation 25s linear infinite;
+      }
+      .dash-flow-2 {
+        stroke-dasharray: 6 6;
+        animation: dashAnimationRev 20s linear infinite;
+      }
+      .node-pulse {
+        animation: nodePulse 2.5s ease-in-out infinite alternate;
+      }
+      .badge-hover {
+        transition: transform 0.3s ease;
+      }
+      .vehicle-1 {
+        animation: moveVehicle1 12s linear infinite;
+      }
+      .vehicle-2 {
+        animation: moveVehicle2 16s linear infinite;
+      }
+      @keyframes dashAnimation {
+        to { stroke-dashoffset: -1000; }
+      }
+      @keyframes dashAnimationRev {
+        to { stroke-dashoffset: 1000; }
+      }
+      @keyframes pulseGlow {
+        0% { opacity: 0.3; }
+        100% { opacity: 0.7; }
+      }
+      @keyframes nodePulse {
+        0% { r: 5; opacity: 0.8; }
+        100% { r: 9; opacity: 0.3; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="420" fill="url(#bgGrad)" />
+  <rect width="1200" height="420" fill="url(#meshGrad1)" />
+  <rect width="1200" height="420" fill="url(#meshGrad2)" />
+  <rect width="1200" height="420" fill="url(#meshGrad3)" />
+
+  <!-- Technical Grid Overlay -->
+  <rect width="1200" height="420" fill="url(#grid)" />
+
+  <!-- DYNAMIC BACKGROUND LAYER: Animated Route Topologies & Solvers -->
+  <g opacity="0.85">
+    <!-- Curved Highway Network / Routes -->
+    <path d="M-50,220 C200,80 350,340 600,210 C850,80 1000,320 1250,180" 
+          fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
+    <path d="M-50,220 C200,80 350,340 600,210 C850,80 1000,320 1250,180" 
+          fill="none" stroke="url(#routeGrad1)" stroke-width="2.5" class="dash-flow-1" stroke-linecap="round" filter="url(#glow)" />
+
+    <path d="M-20,100 C250,260 420,120 700,290 C950,420 1050,150 1250,310" 
+          fill="none" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
+    <path d="M-20,100 C250,260 420,120 700,290 C950,420 1050,150 1250,310" 
+          fill="none" stroke="url(#routeGrad2)" stroke-width="1.8" class="dash-flow-2" stroke-linecap="round" opacity="0.7" />
+
+    <!-- Secondary Branching Feeder Routes -->
+    <path d="M 280,180 L 380,120 L 480,160 L 580,90" fill="none" stroke="#0ea5e9" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.5" />
+    <path d="M 720,290 L 820,220 L 920,270 L 1040,210" fill="none" stroke="#10b981" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.5" />
+
+    <!-- Pulsing Node Ripples (Waypoint Optimization Points) -->
+    <circle cx="280" cy="180" r="6" fill="#38bdf8" filter="url(#glow)" />
+    <circle cx="280" cy="180" r="14" fill="none" stroke="#38bdf8" stroke-width="1.5" class="node-pulse" />
+
+    <circle cx="480" cy="160" r="5" fill="#818cf8" />
+    <circle cx="720" cy="290" r="6" fill="#34d399" filter="url(#glow)" />
+    <circle cx="720" cy="290" r="16" fill="none" stroke="#34d399" stroke-width="1.5" class="node-pulse" style="animation-delay: 1.2s;" />
+
+    <circle cx="920" cy="270" r="5" fill="#f472b6" />
+    <circle cx="1040" cy="210" r="6" fill="#38bdf8" filter="url(#glow)" />
+    <circle cx="1040" cy="210" r="15" fill="none" stroke="#38bdf8" stroke-width="1.5" class="node-pulse" style="animation-delay: 0.6s;" />
+
+    <!-- Animated Dispatching Agent Dots on Routes -->
+    <!-- Vehicle 1: Route 1 -->
+    <g>
+      <circle r="4.5" fill="#ffffff" filter="url(#heavyGlow)">
+        <animateMotion path="M-50,220 C200,80 350,340 600,210 C850,80 1000,320 1250,180" dur="11s" repeatCount="indefinite" />
+      </circle>
+      <circle r="9" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.8">
+        <animateMotion path="M-50,220 C200,80 350,340 600,210 C850,80 1000,320 1250,180" dur="11s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <!-- Vehicle 2: Route 2 -->
+    <g>
+      <circle r="4" fill="#a7f3d0" filter="url(#heavyGlow)">
+        <animateMotion path="M-20,100 C250,260 420,120 700,290 C950,420 1050,150 1250,310" dur="15s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+
+  <!-- FOREGROUND LAYER: Content Frame (Shielded & Centered) -->
+  <g id="foreground-content">
+    <!-- Top Meta Category Tag -->
+    <g transform="translate(600, 72)">
+      <rect x="-170" y="-16" width="340" height="32" rx="16" fill="#0f172a" fill-opacity="0.88" stroke="#334155" stroke-width="1.2" />
+      <circle cx="-146" cy="0" r="4.5" fill="#10b981" filter="url(#glow)">
+        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <text x="-132" y="4.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#94a3b8" letter-spacing="1.5">
+        DISPATCH • ROUTING • VRP SOLVERS
+      </text>
+    </g>
+
+    <!-- Main Title with Distinct Drop/Glow Shadow for crisp readability -->
+    <g transform="translate(600, 140)">
+      <!-- Backing halo to guarantee foreground separation from any line -->
+      <text text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="900" letter-spacing="-0.8" fill="#020617" stroke="#020617" stroke-width="10" stroke-linejoin="round">
+        Awesome Field Service Route Optimization
+      </text>
+      <text text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="900" letter-spacing="-0.8" fill="url(#titleGrad)">
+        Awesome Field Service Route Optimization
+      </text>
+    </g>
+
+    <!-- Subtitle / Tagline -->
+    <g transform="translate(600, 185)">
+      <text text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16.5" font-weight="400" fill="#020617" stroke="#020617" stroke-width="6" stroke-linejoin="round">
+        Curated SaaS Platforms, Self-Hosted Engines &amp; Open-Source VRP Solvers
+      </text>
+      <text text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16.5" font-weight="500" fill="#cbd5e1" letter-spacing="0.2">
+        Curated SaaS Platforms, Self-Hosted Engines &amp; Open-Source VRP Solvers
+      </text>
+    </g>
+
+    <!-- Feature Pillars / Key Capability Badges -->
+    <g transform="translate(600, 246)">
+      <!-- Badge 1: Multi-Stop VRP -->
+      <g transform="translate(-360, 0)">
+        <rect x="-80" y="-16" width="160" height="32" rx="8" fill="#1e293b" fill-opacity="0.92" stroke="#3b82f6" stroke-width="1" />
+        <path d="M-62,-5 L-54,-5 L-50,5 L-42,5" stroke="#60a5fa" stroke-width="2" fill="none" stroke-linecap="round" />
+        <circle cx="-62" cy="-5" r="2" fill="#60a5fa" />
+        <circle cx="-42" cy="5" r="2" fill="#60a5fa" />
+        <text x="6" y="4.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">
+          Multi-Stop VRP
+        </text>
+      </g>
+
+      <!-- Badge 2: Real-time Dispatch -->
+      <g transform="translate(-120, 0)">
+        <rect x="-85" y="-16" width="170" height="32" rx="8" fill="#1e293b" fill-opacity="0.92" stroke="#10b981" stroke-width="1" />
+        <circle cx="-65" cy="0" r="3.5" fill="#34d399" />
+        <text x="6" y="4.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">
+          Dynamic Dispatch
+        </text>
+      </g>
+
+      <!-- Badge 3: Time Windows & Skills -->
+      <g transform="translate(120, 0)">
+        <rect x="-85" y="-16" width="170" height="32" rx="8" fill="#1e293b" fill-opacity="0.92" stroke="#8b5cf6" stroke-width="1" />
+        <circle cx="-64" cy="0" r="4" fill="none" stroke="#a78bfa" stroke-width="1.8" />
+        <polyline points="-64,-2 -64,0 -62,1" stroke="#a78bfa" stroke-width="1.4" fill="none" />
+        <text x="6" y="4.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">
+          VRPTW &amp; Constraints
+        </text>
+      </g>
+
+      <!-- Badge 4: Self-Hosted & Open Source -->
+      <g transform="translate(360, 0)">
+        <rect x="-85" y="-16" width="170" height="32" rx="8" fill="#1e293b" fill-opacity="0.92" stroke="#06b6d4" stroke-width="1" />
+        <path d="M-66,-3 L-62,3 L-58,-3" stroke="#22d3ee" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        <text x="6" y="4.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">
+          Self-Hosted Engines
+        </text>
+      </g>
+    </g>
+
+    <!-- Architectural Engine Metrics Card Row -->
+    <g transform="translate(600, 325)">
+      <!-- Card 1: VROOM -->
+      <g transform="translate(-290, 0)">
+        <rect x="-120" y="-30" width="240" height="60" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+        <text x="-102" y="-8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#38bdf8">VROOM</text>
+        <text x="-102" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">Fast VRP Solver · C++</text>
+        <rect x="52" y="-19" width="54" height="20" rx="4" fill="#0369a1" fill-opacity="0.4" stroke="#0284c7" stroke-width="0.8" />
+        <text x="79" y="-5.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#7dd3fc">~146ms</text>
+      </g>
+
+      <!-- Card 2: GraphHopper -->
+      <g transform="translate(0, 0)">
+        <rect x="-120" y="-30" width="240" height="60" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+        <text x="-102" y="-8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#34d399">GraphHopper</text>
+        <text x="-102" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">Routing &amp; Matrix Engine</text>
+        <rect x="52" y="-19" width="54" height="20" rx="4" fill="#065f46" fill-opacity="0.4" stroke="#059669" stroke-width="0.8" />
+        <text x="79" y="-5.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#6ee7b7">Java</text>
+      </g>
+
+      <!-- Card 3: openrouteservice -->
+      <g transform="translate(290, 0)">
+        <rect x="-120" y="-30" width="240" height="60" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+        <text x="-102" y="-8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#a78bfa">openrouteservice</text>
+        <text x="-102" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="500" fill="#94a3b8">All-in-One Optimization</text>
+        <rect x="52" y="-19" width="54" height="20" rx="4" fill="#4c1d95" fill-opacity="0.4" stroke="#7c3aed" stroke-width="0.8" />
+        <text x="79" y="-5.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#c4b5fd">API/Self</text>
+      </g>
+    </g>
+
+    <!-- Bottom Accent Border Line -->
+    <rect x="0" y="416" width="1200" height="4" fill="url(#titleGrad)" />
+  </g>
+</svg>
